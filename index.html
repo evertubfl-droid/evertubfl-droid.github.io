@@ -94,7 +94,7 @@
   #videos { background: var(--dark2); }
   .video-intro { font-size: 16px; color: rgba(245,242,237,0.65); margin-bottom: 48px; font-weight: 300; }
   .video-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 3px; }
-  .video-placeholder { aspect-ratio: 9/16; background: var(--dark3); border: 1px solid rgba(200,168,90,0.08); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; cursor: pointer; transition: all 0.3s; position: relative; overflow: hidden; }
+  .video-placeholder { aspect-ratio: 9/16; min-height: 250px; background: var(--dark3); border: 1px solid rgba(200,168,90,0.08); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; cursor: pointer; transition: all 0.3s; position: relative; overflow: hidden; }
   .video-placeholder:hover { border-color: rgba(200,168,90,0.3); background: rgba(200,168,90,0.05); }
   .video-placeholder:hover .play-btn { background: var(--accent); color: var(--dark); }
   .play-btn { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center; color: var(--accent); font-size: 16px; transition: all 0.3s; }
@@ -331,275 +331,33 @@
     <h2 class="section-title">Посмотри как это <span>работает вживую</span></h2>
     <div class="divider"></div>
     <p class="video-intro">Только наглядные живые примеры с реальных объектов.</p>
-    <div class="video-grid fade-in">
-      <div class="video-placeholder" style="padding:0;overflow:hidden;">
-<iframe src="https://www.youtube.com/embed/lloxqFEkrQk" style="width:100%;height:100%;position:absolute;top:0;left:0;border:none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<div class="video-label" style="position:absolute;bottom:8px;left:0;right:0;text-align:center;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,0.8);z-index:2;">Реальный заказ (ванна и стены)</div>
+    <div class="video-grid">
+<div class="video-placeholder" onclick="window.open('https://www.youtube.com/shorts/lloxqFEkrQk','_blank')" style="background-image:url('https://img.youtube.com/vi/lloxqFEkrQk/mqdefault.jpg');background-size:cover;background-position:center;cursor:pointer;">
+  <div class="play-btn">▶</div>
+  <div class="video-label">Реальный заказ (ванна и стены)</div>
 </div>
-      <div class="video-placeholder" style="padding:0;overflow:hidden;">
-<iframe src="https://www.youtube.com/embed/K_r7kHT1yxo" style="width:100%;height:100%;position:absolute;top:0;left:0;border:none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<div class="video-label" style="position:absolute;bottom:8px;left:0;right:0;text-align:center;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,0.8);z-index:2;">Реальный заказ (ванна и доп. услуги)</div>
+<div class="video-placeholder" onclick="window.open('https://www.youtube.com/watch?v=K_r7kHT1yxo','_blank')" style="background-image:url('https://img.youtube.com/vi/K_r7kHT1yxo/mqdefault.jpg');background-size:cover;background-position:center;cursor:pointer;">
+  <div class="play-btn">▶</div>
+  <div class="video-label">Реальный заказ (ванна и доп. услуги)</div>
 </div>
-      <div class="video-placeholder" style="padding:0;overflow:hidden;">
-<iframe src="https://www.youtube.com/embed/tHLdbuF8wVg" style="width:100%;height:100%;position:absolute;top:0;left:0;border:none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<div class="video-label" style="position:absolute;bottom:8px;left:0;right:0;text-align:center;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,0.8);z-index:2;">Коммерческий заказ — Отель</div>
-</div></div>
-      <div class="video-placeholder" style="padding:0;overflow:hidden;">
-<iframe src="https://www.youtube.com/embed/E2N-mSLKkQ8" style="width:100%;height:100%;position:absolute;top:0;left:0;border:none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<div class="video-label" style="position:absolute;bottom:8px;left:0;right:0;text-align:center;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,0.8);z-index:2;">Реальный заказ</div>
+<div class="video-placeholder" onclick="window.open('https://www.youtube.com/shorts/tHLdbuF8wVg','_blank')" style="background-image:url('https://img.youtube.com/vi/tHLdbuF8wVg/mqdefault.jpg');background-size:cover;background-position:center;cursor:pointer;">
+  <div class="play-btn">▶</div>
+  <div class="video-label">Коммерческий заказ — Отель</div>
 </div>
-      <div class="video-placeholder" style="padding:0;overflow:hidden;">
-<iframe src="https://www.youtube.com/embed/FCvyaTwGJFs" style="width:100%;height:100%;position:absolute;top:0;left:0;border:none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<div class="video-label" style="position:absolute;bottom:8px;left:0;right:0;text-align:center;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,0.8);z-index:2;">Обучение</div>
+<div class="video-placeholder" onclick="window.open('https://www.youtube.com/shorts/E2N-mSLKkQ8','_blank')" style="background-image:url('https://img.youtube.com/vi/E2N-mSLKkQ8/mqdefault.jpg');background-size:cover;background-position:center;cursor:pointer;">
+  <div class="play-btn">▶</div>
+  <div class="video-label">Реальный заказ</div>
 </div>
-      <div class="video-placeholder" style="padding:0;overflow:hidden;">
-<iframe src="https://www.youtube.com/embed/lk5EDOks2CM" style="width:100%;height:100%;position:absolute;top:0;left:0;border:none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<div class="video-label" style="position:absolute;bottom:8px;left:0;right:0;text-align:center;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,0.8);z-index:2;">Работы наших студентов</div>
+<div class="video-placeholder" onclick="window.open('https://www.youtube.com/shorts/FCvyaTwGJFs','_blank')" style="background-image:url('https://img.youtube.com/vi/FCvyaTwGJFs/mqdefault.jpg');background-size:cover;background-position:center;cursor:pointer;">
+  <div class="play-btn">▶</div>
+  <div class="video-label">Обучение</div>
 </div>
-    </div>
+<div class="video-placeholder" onclick="window.open('https://www.youtube.com/shorts/lk5EDOks2CM','_blank')" style="background-image:url('https://img.youtube.com/vi/lk5EDOks2CM/mqdefault.jpg');background-size:cover;background-position:center;cursor:pointer;">
+  <div class="play-btn">▶</div>
+  <div class="video-label">Работы наших студентов</div>
+</div>
+</div>
     <p class="video-note">Все видео сняты на реальных объектах нашего действующего бизнеса.</p>
   </div>
 </section>
 
-<section id="curriculum">
-  <div class="container">
-    <div class="section-label">Программа обучения</div>
-    <h2 class="section-title">Что ты получишь <span>на обучении</span></h2>
-    <div class="divider"></div>
-    <p style="font-size:16px; color:rgba(245,242,237,0.65); margin-bottom:40px; font-weight:300;">Обучение длится <strong style="color:var(--white);">до 5 дней</strong> в формате живой практики на базе действующего бизнеса.</p>
-    <div class="curriculum-grid fade-in">
-      <div class="curriculum-block">
-        <div class="curriculum-block-title">🔨 Ремесло</div>
-        <ul class="curriculum-list">
-          <li>Полный практический курс покраски ванн</li>
-          <li>Все нюансы подготовки и нанесения эпоксидного покрытия</li>
-          <li>Работа с повреждениями и сложными случаями</li>
-          <li>Технология с гарантией 5 лет и сроком службы 20+ лет</li>
-        </ul>
-      </div>
-      <div class="curriculum-block">
-        <div class="curriculum-block-title">📣 Бизнес и маркетинг</div>
-        <ul class="curriculum-list">
-          <li>Открытие компании в США — весь процесс пошагово</li>
-          <li>Как запустить первую рекламу и найти первых клиентов</li>
-          <li>Полная концепция маркетинга и поиска клиентов</li>
-          <li>Как выстроить воронку продаж</li>
-        </ul>
-      </div>
-    </div>
-    <div class="tariffs-grid fade-in">
-      <div class="tariff">
-        <div class="tariff-name">Старт</div>
-        <div class="tariff-price"><span>$</span>3,500</div>
-        <ul class="tariff-list">
-          <li><span class="tick">✓</span> Полное обучение ремеслу</li>
-          <li><span class="tick">✓</span> Обучение маркетингу и бизнесу</li>
-          <li><span class="tick">✓</span> Делимся всем опытом и знаниями</li>
-          <li><span class="tick">✓</span> Сертификат</li>
-        </ul>
-        <a href="#cta" class="btn-tariff">Забронировать место</a>
-      </div>
-      <div class="tariff featured">
-        <div class="tariff-badge">Рекомендуем</div>
-        <div class="tariff-name">Под ключ</div>
-        <div class="tariff-price"><span>$</span>5,500</div>
-        <ul class="tariff-list">
-          <li><span class="tick">✓</span> Всё что входит в тариф «Старт»</li>
-          <li><span class="tick">✓</span> Готовый сайт для вашего бизнеса</li>
-          <li><span class="tick">✓</span> Настройка скриптов и автоматизации</li>
-          <li><span class="tick">✓</span> AI-бот для автоматической обработки лидов</li>
-          <li><span class="tick">✓</span> Большая часть процессов работает автоматически</li>
-        </ul>
-        <a href="#cta" class="btn-tariff">Забронировать место</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="paths">
-  <div class="container">
-    <div class="section-label">Два пути</div>
-    <h2 class="section-title">После обучения — <span>ты выбираешь свой путь</span></h2>
-    <div class="divider"></div>
-    <div class="paths-detail-grid fade-in">
-      <div class="path-detail" data-num="1">
-        <div class="path-detail-icon">🔨</div>
-        <div class="path-detail-title">Мастер-исполнитель</div>
-        <div class="path-detail-desc">Работаешь сам. Делаешь заказы. Забираешь всю прибыль. Свободный график, никаких начальников, минимум расходов.</div>
-        <table class="path-earnings-table">
-          <tr><td>1 ванна в день</td><td>~$400</td></tr>
-          <tr><td>5 дней в неделю</td><td>~$2,000</td></tr>
-          <tr><td>В месяц</td><td>~$8,000</td></tr>
-        </table>
-      </div>
-      <div class="path-detail" data-num="2">
-        <div class="path-detail-icon">🏢</div>
-        <div class="path-detail-title">Владелец компании</div>
-        <div class="path-detail-desc">Нанимаешь мастеров. Строишь систему. Работа с отелями — стабильный поток заказов. Ты управляешь — мастера работают.</div>
-        <table class="path-earnings-table">
-          <tr><td>1 мастер — 2 ванны в день</td><td>~$400</td></tr>
-          <tr><td>2 мастера — 4 ванны в день</td><td>~$800</td></tr>
-          <tr><td>4 мастера — 8 ванн в день</td><td>~$1,600</td></tr>
-        </table>
-        <p class="path-note">Большинство начинают с Пути 1 — и со временем переходят к Пути 2.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="why">
-  <div class="container">
-    <div class="section-label">Почему мы</div>
-    <h2 class="section-title">Почему <span>EverTub Academy?</span></h2>
-    <div class="divider"></div>
-    <div class="why-grid fade-in">
-      <div class="why-main">
-        <div class="why-main-title">💼 Обучение от действующего бизнеса</div>
-        <p class="why-main-text">Мы не теоретики и не бывшие мастера. EverTub — это действующий бизнес, который работает и приносит реальный доход прямо сейчас.</p>
-        <p class="why-main-text">Ты учишься не по учебникам — а рядом с людьми, которые делают это каждый день.</p>
-      </div>
-      <div class="why-reasons">
-        <div class="why-reason"><div class="why-reason-num">ПРИЧИНА 01</div><div class="why-reason-title">Почему мы обучаем, если сами зарабатываем на этом?</div><div class="why-reason-text">Честный ответ: нам это выгодно. Мы продаём материалы и краску для реставрации ванн — чем больше мастеров работает по нашей технологии, тем больше спрос на наши материалы.</div></div>
-        <div class="why-reason"><div class="why-reason-num">ПРИЧИНА 02</div><div class="why-reason-title">Рынок огромный — конкуренция нам не страшна</div><div class="why-reason-text">США — это сотни миллионов ванных комнат. Заказов хватит на всех. Каждый наш выпускник развивает стандарт качества на рынке.</div></div>
-        <div class="why-reason"><div class="why-reason-num">ПРИЧИНА 03</div><div class="why-reason-title">Мы заинтересованы в твоём успехе</div><div class="why-reason-text">Мы обучаем потому что это часть нашей бизнес-модели — и потому что искренне хотим помочь людям выйти на новый уровень дохода.</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="leads">
-  <div class="container">
-    <div class="section-label">После обучения</div>
-    <h2 class="section-title">Как вы будете <span>получать заказы</span></h2>
-    <div class="divider"></div>
-    <div class="leads-grid fade-in">
-      <div>
-        <p style="font-size:15px; color:rgba(245,242,237,0.65); margin-bottom:28px; font-weight:300; line-height:1.7;">После обучения вы уходите не с пустыми руками — а с готовой системой для получения клиентов.</p>
-        <div class="leads-tools">
-          <div class="tool-item"><div class="tool-icon">🌐</div><div><div class="tool-title">Готовый сайт</div><div class="tool-desc">Персональный сайт для вашего бизнеса — в тарифе «Под ключ»</div></div></div>
-          <div class="tool-item"><div class="tool-icon">📸</div><div><div class="tool-title">Фото и видео материалы</div><div class="tool-desc">Доступ к профессиональным материалам для рекламы</div></div></div>
-          <div class="tool-item"><div class="tool-icon">🤖</div><div><div class="tool-title">AI-автоматизация</div><div class="tool-desc">Скрипт который автоматизирует обработку обращений — большая часть работает без вас</div></div></div>
-          <div class="tool-item"><div class="tool-icon">📋</div><div><div class="tool-title">Помощь на старте</div><div class="tool-desc">Консультируем и помогаем на первоначальных этапах</div></div></div>
-        </div>
-      </div>
-      <div class="leads-support">
-        <div class="leads-support-title">📦 Возможная поддержка от EverTub</div>
-        <p class="leads-support-text">В зависимости от географии и загруженности — мы можем передавать заказы нашим выпускникам.</p>
-        <div class="price-badge"><span class="amount">$300</span><span class="label">стоимость переданного заказа</span></div>
-        <p class="disclaimer">Это не гарантия, а возможность — условия обсуждаются индивидуально с каждым выпускником.</p>
-        <p style="margin-top:20px; font-size:14px; color:rgba(245,242,237,0.65); line-height:1.7;">📌 Наша цель — чтобы после обучения вы как можно быстрее вышли на первые заказы и начали зарабатывать.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="reviews">
-  <div class="container">
-    <div class="section-label">Отзывы</div>
-    <h2 class="section-title">Что говорят наши <span>ученики и клиенты</span></h2>
-    <div class="divider"></div>
-    <p style="font-size:13px; color:var(--accent); letter-spacing:2px; text-transform:uppercase; margin-bottom:32px;">🎓 Отзывы учеников</p>
-    <div class="reviews-grid fade-in">
-      <div class="review-card"><div class="stars">★★★★★</div><div class="review-text">«[Текст отзыва — что было до, что изменилось после обучения, сколько зарабатывает сейчас]»</div><div class="review-author">[Имя ученика]</div><div class="review-city">[Город]</div></div>
-      <div class="review-card"><div class="stars">★★★★★</div><div class="review-text">«[Текст отзыва]»</div><div class="review-author">[Имя ученика]</div><div class="review-city">[Город]</div></div>
-      <div class="review-card"><div class="stars">★★★★★</div><div class="review-text">«[Текст отзыва]»</div><div class="review-author">[Имя ученика]</div><div class="review-city">[Город]</div></div>
-    </div>
-    <p style="font-size:13px; color:var(--accent); letter-spacing:2px; text-transform:uppercase; margin:40px 0 32px;">🛁 Отзывы клиентов</p>
-    <div class="reviews-grid fade-in">
-      <div class="review-card"><div class="stars">★★★★★</div><div class="review-text">«[Текст отзыва — что понравилось, качество работы, результат]»</div><div class="review-author">[Имя клиента]</div><div class="review-city">[Город]</div></div>
-      <div class="review-card"><div class="stars">★★★★★</div><div class="review-text">«[Текст отзыва]»</div><div class="review-author">[Имя клиента]</div><div class="review-city">[Город]</div></div>
-      <div class="review-card"><div class="stars">★★★★★</div><div class="review-text">«[Текст отзыва]»</div><div class="review-author">[Имя клиента]</div><div class="review-city">[Город]</div></div>
-    </div>
-  </div>
-</section>
-
-<section id="format">
-  <div class="container">
-    <div class="section-label">Формат и стоимость</div>
-    <h2 class="section-title">Стоимость и <span>формат обучения</span></h2>
-    <div class="divider"></div>
-    <div class="format-grid fade-in">
-      <div class="format-info">
-        <div class="format-item"><div class="format-item-label">📍 Где</div><div class="format-item-value">Флорида, Clearwater</div></div>
-        <div class="format-item"><div class="format-item-label">🏭 База</div><div class="format-item-value">Действующий бизнес EverTub</div></div>
-        <div class="format-item"><div class="format-item-label">⏱ Длительность</div><div class="format-item-value">До 5 дней</div></div>
-        <div class="format-item"><div class="format-item-label">👥 Формат</div><div class="format-item-value">Мини-группы</div></div>
-        <div class="format-item"><div class="format-item-label">📅 Даты</div><div class="format-item-value">Уточняются индивидуально</div></div>
-      </div>
-      <div class="tariffs-grid">
-        <div class="tariff">
-          <div class="tariff-name">Старт</div>
-          <div class="tariff-price"><span>$</span>3,500</div>
-          <ul class="tariff-list">
-            <li><span class="tick">✓</span> Полное обучение ремеслу</li>
-            <li><span class="tick">✓</span> Маркетинг и бизнес</li>
-            <li><span class="tick">✓</span> Весь опыт и знания</li>
-            <li><span class="tick">✓</span> Сертификат</li>
-          </ul>
-          <a href="#cta" class="btn-tariff">Забронировать место</a>
-        </div>
-        <div class="tariff featured">
-          <div class="tariff-badge">Рекомендуем</div>
-          <div class="tariff-name">Под ключ</div>
-          <div class="tariff-price"><span>$</span>5,500</div>
-          <ul class="tariff-list">
-            <li><span class="tick">✓</span> Всё из тарифа «Старт»</li>
-            <li><span class="tick">✓</span> Готовый сайт</li>
-            <li><span class="tick">✓</span> Скрипты и автоматизация</li>
-            <li><span class="tick">✓</span> AI-бот для лидов</li>
-          </ul>
-          <a href="#cta" class="btn-tariff">Забронировать место</a>
-        </div>
-      </div>
-    </div>
-    <p style="font-size:13px; color:var(--gray); font-style:italic; border-left:2px solid rgba(200,168,90,0.3); padding-left:16px;">Места ограничены. Для бронирования — просто оставьте заявку и мы свяжемся с вами.</p>
-  </div>
-</section>
-
-<section id="faq">
-  <div class="container">
-    <div class="section-label">FAQ</div>
-    <h2 class="section-title">Часто задаваемые <span>вопросы</span></h2>
-    <div class="divider"></div>
-    <div class="faq-list fade-in">
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Нужны ли лицензии и разрешения чтобы заниматься реставрацией ванн?</span><div class="faq-toggle">+</div></div><div class="faq-a">Реставрация ванн не требует специальных лицензий. Для легальной работы достаточно зарегистрировать компанию в США — мы разбираем этот процесс пошагово прямо на обучении.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Помогаете ли вы после обучения?</span><div class="faq-toggle">+</div></div><div class="faq-a">Да. Мы не бросаем выпускников после курса. Консультируем и помогаем на первоначальных этапах — чтобы старт прошёл максимально уверенно.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Нужен ли опыт в строительстве или ремонте?</span><div class="faq-toggle">+</div></div><div class="faq-a">Нет. Мы обучаем с абсолютного нуля. Большинство наших учеников пришли без какого-либо опыта в этой сфере.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Что если у меня слабый английский?</span><div class="faq-toggle">+</div></div><div class="faq-a">Не проблема. Обучение проходит на русском языке. Мы также даём инструменты для работы с англоязычными клиентами — скрипты, шаблоны, автоматизация.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Как быстро я смогу начать зарабатывать после обучения?</span><div class="faq-toggle">+</div></div><div class="faq-a">Многие ученики получают первые заказы уже в первые недели после обучения. В тарифе «Под ключ» вы уходите с готовым сайтом и скриптом, который автоматизирует процесс обработки обращений.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Зачем вы обучаете если сами на этом зарабатываете?</span><div class="faq-toggle">+</div></div><div class="faq-a">Нам это выгодно по двум причинам. Первая — мы продаём материалы для реставрации ванн и заинтересованы в росте числа мастеров. Вторая — рынок США огромный, заказов хватит на всех.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Могу ли я заниматься этим если приехал недавно?</span><div class="faq-toggle">+</div></div><div class="faq-a">Да. Именно для таких людей и создана EverTub Academy. Не нужен идеальный английский, не нужен опыт, не нужны связи. Нужно только желание работать на себя.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Подходит ли это для женщин?</span><div class="faq-toggle">+</div></div><div class="faq-a">Да. Среди наших учеников есть женщины. Это ремесло доступно всем — многие делают из этого семейный бизнес.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Что входит в обучение — только теория или живая практика?</span><div class="faq-toggle">+</div></div><div class="faq-a">Только живая практика. Обучение проходит на базе действующего бизнеса — вы работаете руками на реальных ваннах прямо в нашей мастерской. Никаких презентаций и скучных лекций.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Что если у меня не получится освоить ремесло за 5 дней?</span><div class="faq-toggle">+</div></div><div class="faq-a">Мы работаем в мини-группах именно для того чтобы уделить максимум внимания каждому ученику. Если нужно больше времени — разберём все нюансы до результата.</div></div>
-    </div>
-  </div>
-</section>
-
-<section id="cta">
-  <div class="container">
-    <h2 class="cta-title">Готов <span>начать?</span></h2>
-    <p class="cta-sub">Это твой шанс освоить востребованное ремесло и построить собственный бизнес в США. Без опыта. Без хорошего английского. С нуля.</p>
-    <p class="cta-urgency">⚡ Места в группах ограничены — не откладывай</p>
-    <div class="cta-buttons">
-      <a href="tel:+1" class="btn-primary">Забронировать место</a>
-      <a href="https://t.me/EverTubAcademyBot" class="btn-secondary">Написать в Telegram</a>
-    </div>
-    <p class="cta-note">После заявки мы свяжемся с тобой, ответим на все вопросы и подберём удобные даты.</p>
-  </div>
-</section>
-
-<footer>
-  <div class="footer-logo">EverTub Academy</div>
-  <div class="footer-text">© 2025 EverTub Academy · Флорида, Clearwater</div>
-</footer>
-
-<script>
-  function toggleFaq(el) { const item = el.parentElement; item.classList.toggle('open'); }
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); } });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-</script>
-</body>
-</html>
