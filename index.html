@@ -212,6 +212,41 @@
     .reviews-grid { grid-template-columns: 1fr; }
     #hero::after { display: none; }
   }
+
+  /* LIGHTBOX */
+  .lightbox-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.92);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+  }
+  .lightbox-overlay.active { display: flex; }
+  .lightbox-inner {
+    position: relative;
+    width: 90vw;
+    max-width: 500px;
+    aspect-ratio: 9/16;
+  }
+  .lightbox-inner iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  .lightbox-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: #fff;
+    font-size: 32px;
+    cursor: pointer;
+    line-height: 1;
+    background: none;
+    border: none;
+  }
+
 </style>
 </head>
 <body>
@@ -332,29 +367,29 @@
     <div class="divider"></div>
     <p class="video-intro">Только наглядные живые примеры с реальных объектов.</p>
     <div class="video-grid">
-<div class="video-placeholder" onclick="window.open('https://www.youtube.com/shorts/lloxqFEkrQk','_blank')" style="background-image:url('https://img.youtube.com/vi/lloxqFEkrQk/mqdefault.jpg');background-size:cover;background-position:center;cursor:pointer;">
+<div class="video-placeholder" onclick="openVideo('lloxqFEkrQk')" style="background-image:url('https://img.youtube.com/vi/lloxqFEkrQk/maxresdefault.jpg');background-size:cover;background-position:center;cursor:pointer;">
   <div class="play-btn">▶</div>
-  <div class="video-label">Реальный заказ (ванна и стены)</div>
+  <div class="video-label" style="position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,0.75);color:#fff;padding:10px 8px;font-size:11px;text-align:center;line-height:1.4;">Реальный заказ (ванна и стены)</div>
 </div>
-<div class="video-placeholder" onclick="window.open('https://www.youtube.com/watch?v=K_r7kHT1yxo','_blank')" style="background-image:url('https://img.youtube.com/vi/K_r7kHT1yxo/mqdefault.jpg');background-size:cover;background-position:center;cursor:pointer;">
+<div class="video-placeholder" onclick="openVideo('K_r7kHT1yxo')" style="background-image:url('https://img.youtube.com/vi/K_r7kHT1yxo/maxresdefault.jpg');background-size:cover;background-position:center;cursor:pointer;">
   <div class="play-btn">▶</div>
-  <div class="video-label">Реальный заказ (ванна и доп. услуги)</div>
+  <div class="video-label" style="position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,0.75);color:#fff;padding:10px 8px;font-size:11px;text-align:center;line-height:1.4;">Реальный заказ (ванна и доп. услуги)</div>
 </div>
-<div class="video-placeholder" onclick="window.open('https://www.youtube.com/shorts/tHLdbuF8wVg','_blank')" style="background-image:url('https://img.youtube.com/vi/tHLdbuF8wVg/mqdefault.jpg');background-size:cover;background-position:center;cursor:pointer;">
+<div class="video-placeholder" onclick="openVideo('tHLdbuF8wVg')" style="background-image:url('https://img.youtube.com/vi/tHLdbuF8wVg/maxresdefault.jpg');background-size:cover;background-position:center;cursor:pointer;">
   <div class="play-btn">▶</div>
-  <div class="video-label">Коммерческий заказ — Отель</div>
+  <div class="video-label" style="position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,0.75);color:#fff;padding:10px 8px;font-size:11px;text-align:center;line-height:1.4;">Коммерческий заказ — Отель</div>
 </div>
-<div class="video-placeholder" onclick="window.open('https://www.youtube.com/shorts/E2N-mSLKkQ8','_blank')" style="background-image:url('https://img.youtube.com/vi/E2N-mSLKkQ8/mqdefault.jpg');background-size:cover;background-position:center;cursor:pointer;">
+<div class="video-placeholder" onclick="openVideo('E2N-mSLKkQ8')" style="background-image:url('https://img.youtube.com/vi/E2N-mSLKkQ8/maxresdefault.jpg');background-size:cover;background-position:center;cursor:pointer;">
   <div class="play-btn">▶</div>
-  <div class="video-label">Реальный заказ</div>
+  <div class="video-label" style="position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,0.75);color:#fff;padding:10px 8px;font-size:11px;text-align:center;line-height:1.4;">Реальный заказ</div>
 </div>
-<div class="video-placeholder" onclick="window.open('https://www.youtube.com/shorts/FCvyaTwGJFs','_blank')" style="background-image:url('https://img.youtube.com/vi/FCvyaTwGJFs/mqdefault.jpg');background-size:cover;background-position:center;cursor:pointer;">
+<div class="video-placeholder" onclick="openVideo('FCvyaTwGJFs')" style="background-image:url('https://img.youtube.com/vi/FCvyaTwGJFs/maxresdefault.jpg');background-size:cover;background-position:center;cursor:pointer;">
   <div class="play-btn">▶</div>
-  <div class="video-label">Обучение</div>
+  <div class="video-label" style="position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,0.75);color:#fff;padding:10px 8px;font-size:11px;text-align:center;line-height:1.4;">Обучение</div>
 </div>
-<div class="video-placeholder" onclick="window.open('https://www.youtube.com/shorts/lk5EDOks2CM','_blank')" style="background-image:url('https://img.youtube.com/vi/lk5EDOks2CM/mqdefault.jpg');background-size:cover;background-position:center;cursor:pointer;">
+<div class="video-placeholder" onclick="openVideo('lk5EDOks2CM')" style="background-image:url('https://img.youtube.com/vi/lk5EDOks2CM/maxresdefault.jpg');background-size:cover;background-position:center;cursor:pointer;">
   <div class="play-btn">▶</div>
-  <div class="video-label">Работы наших студентов</div>
+  <div class="video-label" style="position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,0.75);color:#fff;padding:10px 8px;font-size:11px;text-align:center;line-height:1.4;">Работы наших студентов</div>
 </div>
 </div>
     <p class="video-note">Все видео сняты на реальных объектах нашего действующего бизнеса.</p>
