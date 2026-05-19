@@ -257,20 +257,20 @@
     .faq-q { font-size: 13px; padding: 16px 20px; }
   }
   /* LIGHTBOX */
-  .lightbox-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.93); z-index: 9999; align-items: center; justify-content: center; }
+  .lightbox-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.93); z-index: 9999; align-items: center; justify-content: center; flex-direction: column; gap: 16px; padding: 16px; }
   .lightbox-overlay.active { display: flex; }
-  .lightbox-inner { position: relative; width: 90vw; max-width: 480px; aspect-ratio: 9/16; }
-  .lightbox-inner iframe { width: 100%; height: 100%; border: none; border-radius: 4px; }
-  .lightbox-close { position: absolute; top: -44px; right: 0; color: #fff; font-size: 36px; cursor: pointer; line-height: 1; background: none; border: none; opacity: 0.8; transition: opacity 0.2s; }
-  .lightbox-close:hover { opacity: 1; }
+  .lightbox-close { width: 52px; height: 52px; border-radius: 50%; background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.4); color: #fff; font-size: 24px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.2s; align-self: flex-end; }
+  .lightbox-close:hover { background: rgba(255,255,255,0.3); }
+  .lightbox-inner { position: relative; width: 100%; max-width: 420px; aspect-ratio: 9/16; max-height: 80vh; }
+  .lightbox-inner iframe { width: 100%; height: 100%; border: none; border-radius: 8px; }
 </style>
 </head>
 <body>
 
 <!-- LIGHTBOX -->
 <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lightbox-close" onclick="closeVideo()">✕</button>
   <div class="lightbox-inner">
-    <button class="lightbox-close" onclick="closeVideo()">✕</button>
     <iframe id="lightbox-iframe" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   </div>
 </div>
@@ -328,7 +328,7 @@
     <h1 class="hero-title">Освой востребованное ремесло и <span>запусти собственный бизнес</span> в США</h1>
     <p class="hero-sub">Обучаем реставрации ванн с нуля — от техники до первых клиентов. <strong>Без опыта. Без хорошего английского.</strong> На базе действующего бизнеса.</p>
     <a href="#cta" class="btn-primary">Хочу узнать подробнее</a>
-    <a href="#videos" class="btn-secondary">Смотреть видео</a>
+    <a href="#videos" class="btn-secondary" onclick="document.getElementById('videos').scrollIntoView({behavior:'smooth'}); return false;">Смотреть видео</a>
   </div>
 </section>
 
