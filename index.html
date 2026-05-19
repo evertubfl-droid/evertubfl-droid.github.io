@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, inithial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EverTub Academy — Обучение реставрации ванн в США</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>  
@@ -210,6 +210,52 @@
     .reviews-grid { grid-template-columns: 1fr; }
     #hero::after { display: none; }
   }
+  /* MODAL FORM */
+  .modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.88); z-index: 9998; align-items: center; justify-content: center; padding: 20px; }
+  .modal-overlay.active { display: flex; }
+  .modal-box { background: var(--dark3); border: 1px solid rgba(200,168,90,0.3); padding: 48px; max-width: 480px; width: 100%; position: relative; }
+  .modal-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent), transparent); }
+  .modal-close { position: absolute; top: 16px; right: 20px; color: var(--gray); font-size: 24px; cursor: pointer; background: none; border: none; line-height: 1; transition: color 0.2s; }
+  .modal-close:hover { color: var(--accent); }
+  .modal-title { font-family: 'Bebas Neue', sans-serif; font-size: 32px; letter-spacing: 1px; color: var(--accent); margin-bottom: 8px; }
+  .modal-sub { font-size: 14px; color: var(--gray); margin-bottom: 28px; line-height: 1.5; }
+  .form-group { margin-bottom: 16px; }
+  .form-group label { display: block; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); margin-bottom: 8px; }
+  .form-group input, .form-group select, .form-group textarea { width: 100%; background: var(--dark2); border: 1px solid rgba(200,168,90,0.2); color: var(--white); padding: 14px 16px; font-size: 14px; font-family: 'Montserrat', sans-serif; outline: none; transition: border-color 0.3s; }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--accent); }
+  .form-group select { appearance: none; cursor: pointer; }
+  .form-group select option { background: var(--dark2); }
+  .form-group textarea { resize: vertical; min-height: 80px; }
+  .btn-submit { width: 100%; background: var(--accent); color: var(--dark); padding: 16px; font-size: 13px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; border: none; cursor: pointer; transition: all 0.3s; font-family: 'Montserrat', sans-serif; margin-top: 8px; }
+  .btn-submit:hover { background: var(--accent2); }
+  .form-success { display: none; text-align: center; padding: 20px 0; }
+  .form-success-icon { font-size: 48px; margin-bottom: 16px; }
+  .form-success-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--accent); margin-bottom: 8px; }
+  .form-success-text { font-size: 14px; color: var(--gray); line-height: 1.6; }
+
+  /* MOBILE FIXES */
+  @media (max-width: 480px) {
+    .hero-title { font-size: clamp(40px, 11vw, 60px); }
+    .hero-sub { font-size: 15px; }
+    .btn-primary, .btn-secondary { padding: 15px 28px; font-size: 12px; width: 100%; text-align: center; margin-left: 0; display: block; }
+    .btn-secondary { margin-top: 12px; }
+    .cta-buttons { flex-direction: column; align-items: stretch; }
+    .cta-buttons .btn-primary, .cta-buttons .btn-secondary { width: 100%; margin-left: 0; }
+    .hero-tag { font-size: 10px; letter-spacing: 1px; padding: 6px 14px; }
+    .steps-row { grid-template-columns: 1fr; }
+    .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+    .video-grid { grid-template-columns: repeat(2, 1fr); }
+    .tariff { padding: 28px 20px; }
+    .tariff-price { font-size: 48px; }
+    .path-detail { padding: 28px 20px; }
+    .why-main { padding: 28px 20px; }
+    .modal-box { padding: 32px 20px; }
+    .section-title { font-size: clamp(28px, 8vw, 48px); }
+    .nav-cta { padding: 8px 16px; font-size: 11px; }
+    .logo { font-size: 22px; }
+    .calc-row { font-size: 13px; padding: 12px 16px; }
+    .faq-q { font-size: 13px; padding: 16px 20px; }
+  }
   /* LIGHTBOX */
   .lightbox-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.93); z-index: 9999; align-items: center; justify-content: center; }
   .lightbox-overlay.active { display: flex; }
@@ -226,6 +272,48 @@
   <div class="lightbox-inner">
     <button class="lightbox-close" onclick="closeVideo()">✕</button>
     <iframe id="lightbox-iframe" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- MODAL BOOKING FORM -->
+<div class="modal-overlay" id="bookingModal" onclick="closeModalOutside(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="formContent">
+      <div class="modal-title">Забронировать место</div>
+      <p class="modal-sub">Оставьте заявку — мы свяжемся с вами, ответим на все вопросы и подберём удобные даты.</p>
+      <div class="form-group">
+        <label>Ваше имя *</label>
+        <input type="text" id="fieldName" placeholder="Как вас зовут?" />
+      </div>
+      <div class="form-group">
+        <label>Телефон или Telegram *</label>
+        <input type="text" id="fieldContact" placeholder="+1 (555) 000-0000 или @username" />
+      </div>
+      <div class="form-group">
+        <label>Откуда вы?</label>
+        <input type="text" id="fieldCity" placeholder="Город, штат" />
+      </div>
+      <div class="form-group">
+        <label>Тариф</label>
+        <select id="fieldTariff">
+          <option value="">— выберите тариф —</option>
+          <option value="Старт ($2,500–$3,500)">Старт ($2,500–$3,500)</option>
+          <option value="Под ключ ($5,500)">Под ключ ($5,500)</option>
+          <option value="Не определился">Не определился ещё</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Вопрос или комментарий</label>
+        <textarea id="fieldMessage" placeholder="Любой вопрос — мы ответим"></textarea>
+      </div>
+      <button class="btn-submit" onclick="submitForm()">Отправить заявку →</button>
+    </div>
+    <div class="form-success" id="formSuccess">
+      <div class="form-success-icon">✅</div>
+      <div class="form-success-title">Заявка отправлена!</div>
+      <p class="form-success-text">Мы получили вашу заявку и свяжемся с вами в ближайшее время через Telegram или телефон.</p>
+    </div>
   </div>
 </div>
 
@@ -549,7 +637,7 @@
             <li><span class="tick">✓</span> Весь опыт и знания</li>
             <li><span class="tick">✓</span> Сертификат</li>
           </ul>
-          <a href="#cta" class="btn-tariff">Забронировать место</a>
+          <a href="#cta" class="btn-tariff" onclick="openModal(); return false;">Забронировать место</a>
         </div>
         <div class="tariff featured">
           <div class="tariff-badge">Рекомендуем</div>
@@ -561,7 +649,7 @@
             <li><span class="tick">✓</span> Скрипты и автоматизация</li>
             <li><span class="tick">✓</span> AI-бот для лидов</li>
           </ul>
-          <a href="#cta" class="btn-tariff">Забронировать место</a>
+          <a href="#cta" class="btn-tariff" onclick="openModal(); return false;">Забронировать место</a>
         </div>
       </div>
     </div>
@@ -595,7 +683,7 @@
     <p class="cta-sub">Это твой шанс освоить востребованное ремесло и построить собственный бизнес в США. Без опыта. Без хорошего английского. С нуля.</p>
     <p class="cta-urgency">⚡ Места в группах ограничены — не откладывай</p>
     <div class="cta-buttons">
-      <a href="#cta" class="btn-primary">Забронировать место</a>
+      <a href="#cta" class="btn-primary" onclick="openModal(); return false;">Забронировать место</a>
       <a href="https://t.me/EverTubAcademyBot" class="btn-secondary">Написать в Telegram</a>
     </div>
     <p class="cta-note">После заявки мы свяжемся с тобой, ответим на все вопросы и подберём удобные даты.</p>
@@ -608,6 +696,71 @@
 </footer>
 
 <script>
+  // MODAL
+  function openModal() {
+    document.getElementById('bookingModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('bookingModal').classList.remove('active');
+    document.body.style.overflow = '';
+    // reset form
+    setTimeout(function() {
+      document.getElementById('formContent').style.display = 'block';
+      document.getElementById('formSuccess').style.display = 'none';
+      document.getElementById('fieldName').value = '';
+      document.getElementById('fieldContact').value = '';
+      document.getElementById('fieldCity').value = '';
+      document.getElementById('fieldTariff').value = '';
+      document.getElementById('fieldMessage').value = '';
+    }, 300);
+  }
+  function closeModalOutside(e) {
+    if (e.target === document.getElementById('bookingModal')) closeModal();
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') { closeModal(); closeVideo(); }
+  });
+
+  // SUBMIT FORM → Telegram Bot
+  function submitForm() {
+    var name = document.getElementById('fieldName').value.trim();
+    var contact = document.getElementById('fieldContact').value.trim();
+    var city = document.getElementById('fieldCity').value.trim();
+    var tariff = document.getElementById('fieldTariff').value;
+    var message = document.getElementById('fieldMessage').value.trim();
+
+    if (!name || !contact) {
+      alert('Пожалуйста, заполните имя и контакт');
+      return;
+    }
+
+    var text = '📋 Новая заявка с сайта!\n\n'
+      + '👤 Имя: ' + name + '\n'
+      + '📱 Контакт: ' + contact + '\n'
+      + (city ? '📍 Город: ' + city + '\n' : '')
+      + (tariff ? '💰 Тариф: ' + tariff + '\n' : '')
+      + (message ? '\n💬 Вопрос: ' + message : '');
+
+    var token = '7768158700:AAFJtTYsxKmkRwNkQpW2mRMuVzDTf0u2PnU';
+    var chatId = '6051243753';
+
+    fetch('https://api.telegram.org/bot' + token + '/sendMessage', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ chat_id: chatId, text: text, parse_mode: 'HTML' })
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      document.getElementById('formContent').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    })
+    .catch(function() {
+      document.getElementById('formContent').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    });
+  }
+
   // LIGHTBOX
   function openVideo(videoId) {
     var overlay = document.getElementById('lightbox');
